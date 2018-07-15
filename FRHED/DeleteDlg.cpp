@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-02-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  DeleteDlg.cpp
  *
  * @brief Implementation of the Delete dialog.
@@ -147,7 +147,7 @@ INT_PTR DeleteDlg::DlgProc(HWindow *pDlg, UINT uMsg, WPARAM wParam, LPARAM lPara
 				pDlg->EndDialog(wParam);
 			}
 			return TRUE;
-		case IDC_DELETE_INCLUDEOFFSET:  
+		case IDC_DELETE_INCLUDEOFFSET:
 		case IDC_DELETE_NUMBEROFBYTES:
 			EnableDlgItem(pDlg, IDC_DELETE_NUMBYTES,
 				pDlg->IsDlgButtonChecked(IDC_DELETE_NUMBEROFBYTES));

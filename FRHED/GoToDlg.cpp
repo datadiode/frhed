@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-02-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  GotoDlg.cpp
  *
  * @brief Implementation of the Go To-dialog.
@@ -76,7 +76,7 @@ BOOL GoToDlg::Apply(HWindow *pDlg)
 			offset = -offset;
 		offset += iCurByte;
 	}
-	
+
 	// Absolute jump.
 	// Check limits and jump to begin/end if out of limits
 	if (offset < 0)

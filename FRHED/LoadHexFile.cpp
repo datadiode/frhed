@@ -257,7 +257,7 @@ bool load_hexfile_1::StreamIn(hexfile_stream &hexin)
 		//trash the extra space
 		if (hexin.lhgetc() == EOF)
 			goto UnexpectedEndOfData;
-		
+
 		//Verify that the data read by the above loop is correct and equal to that read by this loop
 		for ( ; ls < ii ; ls++)
 		{

@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2017-06-21 by Jochen Neubeck
 */
-/** 
+/**
  * @file  BinTrans.h
  *
  * @brief Text to binary converter class declaration.

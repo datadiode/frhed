@@ -493,7 +493,7 @@ STDMETHODIMP CDropTarget::Drop(IDataObject* pDataObject, DWORD grfKeyState, POIN
 					case TYMED_ISTORAGE:
 						{
 							MessageBox(hexwnd.pwnd, GetLangString(IDS_DD_TYMED_NOTSUP), MB_OK);
-						} 
+						}
 						break; // IStorage*
 					case TYMED_GDI:
 						{

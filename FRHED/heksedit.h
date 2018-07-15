@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2017-06-18 by Jochen Neubeck
 */
-/** 
+/**
  * @file  heksedit.h
  *
  * @brief Interface definition for the hekseditor window.

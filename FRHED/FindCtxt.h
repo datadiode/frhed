@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-02-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  FindCtxt.h
  *
  * @brief Declaration of the Find context class.
@@ -33,7 +33,7 @@ public:
 
 	FindCtxt();
 	~FindCtxt();
-	
+
 	void SetText(LPCSTR text);
 	bool HasText() const { return m_pText != NULL; }
 	void ClearText();

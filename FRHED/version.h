@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-04-10 by Jochen Neubeck
 */
-/** 
+/**
  * @file  version.h
  *
  * @brief Version number (macros) for Frhed.
@@ -27,8 +27,8 @@ Last change: 2013-04-10 by Jochen Neubeck
 // Note that for releases, these values are read from
 // versions.ini file and set here by the SetVersions.py script
 #define FRHED_MAJOR_VERSION 0
-#define FRHED_MINOR_VERSION 10904
-#define FRHED_SUB_RELEASE_NO 2017
+#define FRHED_MINOR_VERSION 10905
+#define FRHED_SUB_RELEASE_NO 2018
 #define FRHED_BUILD_NO 0
 
 // Utility macros for formatting version number to string.

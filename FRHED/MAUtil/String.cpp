@@ -78,7 +78,7 @@ namespace MAUtil {
 		} else {
 			sd = new StringData<Tchar>(len, text);
 			MAASSERT(sd);
-		}		
+		}
 	}
 
 	template<class Tchar> BasicString<Tchar>::BasicString(const Tchar* text, int len) {
@@ -171,7 +171,7 @@ namespace MAUtil {
 		}
 		memcpy(sd->pointer() + oldLen, other, otherLen * sizeof(Tchar));
 		pointer()[newLen] = 0;
-		sd->resize(newLen);		
+		sd->resize(newLen);
 	}
 
 	template<class Tchar>

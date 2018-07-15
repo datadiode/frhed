@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-02-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  ShortcutsDlg.cpp
  *
  * @brief Implementation of the Shortcuts dialog.
@@ -47,7 +47,7 @@ public:
 	void Recurse();
 };
 
-TraverseFolders::TraverseFolders(HListView *list) 
+TraverseFolders::TraverseFolders(HListView *list)
 	: cr(FALSE), list(list)
 {
 	ZeroMemory(rn, sizeof(rn));

@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2017-06-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  Simparr.h
  *
  * @brief Declaration file for SimpleArray and SimpleString classes.

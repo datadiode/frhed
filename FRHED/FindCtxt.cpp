@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-02-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  FindCtxt.cpp
  *
  * @brief Implementation of the hex window.
@@ -27,7 +27,7 @@ Last change: 2013-02-24 by Jochen Neubeck
 #include "FindCtxt.h"
 
 /**
- * @brief Constructor. 
+ * @brief Constructor.
  */
 FindCtxt::FindCtxt()
 : m_pText(NULL)

@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-02-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  CutDlg.cpp
  *
  * @brief Cut dialog implementation.
@@ -165,7 +165,7 @@ INT_PTR CutDlg::DlgProc(HWindow *pDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
 				pDlg->EndDialog(wParam);
 			}
 			return TRUE;
-		case IDC_CUT_INCLUDEOFFSET:  
+		case IDC_CUT_INCLUDEOFFSET:
 		case IDC_CUT_NUMBEROFBYTES:
 			EnableDlgItem(pDlg, IDC_CUT_NUMBYTES,
 				pDlg->IsDlgButtonChecked(IDC_CUT_NUMBEROFBYTES));

@@ -123,7 +123,7 @@ namespace MAUtil {
 		* Copies the specified null-terminated string into the new string.
 		*/
 		BasicString(const Tchar* text);
-		
+
 		/**
 		* Copies \a len bytes of the string \a text into the new string.
 		*/
@@ -268,7 +268,7 @@ namespace MAUtil {
 
 	protected:
 		void allocStringData(const Tchar *text, int len);
-	
+
 		/** A pointer to the string data object shared by this string. */
 		StringData<Tchar>* sd;
 #ifdef HAVE_EMPTY_STRING
@@ -298,7 +298,7 @@ namespace MAUtil {
 		template<class T> friend
 			StringDupeStream operator+(const String& s, T st);
 	};
-	
+
 	template<class T>
 	StringStream operator+=(String& s, T t) {
 		int newCap = StringTranscribe::requiredSpace(t) + s.size();

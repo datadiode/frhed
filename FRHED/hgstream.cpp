@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-02-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  hgstream.cpp
  *
  * @brief Implementation of HGlobalStream class.
@@ -66,7 +66,7 @@ HGlobalStream& HGlobalStream::operator << (BYTE c)
 		DWORD size = 1;
 		switch (c)
 		{
-		case ' ': 
+		case ' ':
 			if (_nbsp)
 			{
 				e[1] = '~';

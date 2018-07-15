@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-04-10 by Jochen Neubeck
 */
-/** 
+/**
  * @file  hexwnd.cpp
  *
  * @brief Implementation of the hex window.
@@ -939,7 +939,7 @@ void HexEditorWindow::character(char ch)
 		else return;
 	}
 	UndoRecord::Data *olddata = NULL;
-	
+
 	// If there is selection replace.
 	if (bSelected)
 	{
@@ -5811,7 +5811,7 @@ void HexEditorWindow::status_bar_click(bool left)
 		#define OPF_PATHNAME 0x02
 		WINSHELLAPI BOOL WINAPI SHObjectProperties(HWND hwndOwner,UINT uFlags,LPCSTR lpstrName,LPCSTR lpstrParameters);*/
 		break;
-		
+
 	}//switch( which part )
 
 	if (n == 0 || n == 1)
@@ -6462,7 +6462,7 @@ HGLOBAL HexEditorWindow::RTF_hexdump(int start, int end, SIZE_T *plen)
 			}
 			x = (iMaxOffsetLen+iByteSpace+iBytesPerLine*9/4+iCharSpace-1)*cxChar*20-10*cxChar;//There are 20 twips per point
 			//The two lines at the start of the charspace
-			s << 
+			s <<
 			//A line
 			"\\dpline"
 			//Positions of the ends

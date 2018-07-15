@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-02-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  OpenPartiallyDlg.cpp
  *
  * @brief Implementation of the dialog for opening files partially.
@@ -66,7 +66,7 @@ BOOL OpenPartiallyDlg::Apply(HWindow *pDlg)
 	bShowFileStatsPL = state == BST_CHECKED;
 	TCHAR buf[128];
 	UINT numBytesPl = 0; // Bytes to read
-	
+
 	// Only complain about wrong offset in start offset editbox if loading from start.
 	if (pDlg->GetDlgItemText(IDC_OPENPARTIAL_BYTES, buf, RTL_NUMBER_OF(buf)) &&
 		_stscanf(buf, _T("%u"), &numBytesPl) == 0)

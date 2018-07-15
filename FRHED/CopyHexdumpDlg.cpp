@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-02-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  CopyHexdumpDlg.cpp
  *
  * @brief Implementation of the Hexdump copying dialog.

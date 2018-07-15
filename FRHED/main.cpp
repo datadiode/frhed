@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-02-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  main.cpp
  *
  * @brief WinMain of Frhed.
@@ -283,7 +283,7 @@ LRESULT CALLBACK MainWndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 	case WM_SETFOCUS:
 		SetFocus(hwndHex);
 		break;
-	case WM_CLOSE: 
+	case WM_CLOSE:
 		if (!pHexWnd->close())
 			return 0;
 		break;

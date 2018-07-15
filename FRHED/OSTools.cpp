@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-04-09 by Jochen Neubeck
 */
-/** 
+/**
  * @file  OSTools.cpp
  *
  * @brief Implementation OS tool functions.

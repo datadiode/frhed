@@ -24,7 +24,7 @@ Last change: 2018-06-13 by Jochen Neubeck
 namespace MAUtil {
 
 	RefCounted::RefCounted(int startCount) : mRefCount(startCount) {}
-	
+
 	void RefCounted::addRef() {
 		mRefCount++;
 	}

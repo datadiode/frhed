@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-02-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  ViewSettingsDlg.cpp
  *
  * @brief Implementation of the View settings -dialog.
@@ -257,7 +257,7 @@ BOOL ViewSettingsDlg::Apply(HWindow *pDlg)
 		iMinOffsetLen = 1;
 	// Get the text editor path and name.
 	pDlg->GetDlgItemText(IDC_SETTINGS_EDITOR, TexteditorName, RTL_NUMBER_OF(TexteditorName));
-	
+
 	UINT res = pDlg->IsDlgButtonChecked(IDC_SETTINGS_ADJUST_BYTELINE);
 	if (res == BST_CHECKED)
 		iAutomaticBPL = 1;

@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2013-02-24 by Jochen Neubeck
 */
-/** 
+/**
  * @file  FillWithDlg.cpp
  *
  * @brief Implementation of the Fill dialog.
@@ -204,7 +204,7 @@ INT_PTR FillWithDialog::DlgProc(HWindow *pDlg, UINT iMsg, WPARAM wParam, LPARAM 
 			inittxt(pDlg);
 			switch (asstyp)
 			{
-			case 0: 
+			case 0:
 				pDlg->CheckDlgButton(IDC_EQ, BST_CHECKED);
 				break;
 			case 1:

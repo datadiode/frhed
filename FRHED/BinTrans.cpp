@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Last change: 2017-06-21 by Jochen Neubeck
 */
-/** 
+/**
  * @file  BinTrans.cpp
  *
  * @brief Text to binary converter class implementation.
@@ -78,7 +78,7 @@ int Text2BinTranslator::GetTrans2Bin(Vector<BYTE> &sa, int charmode, int binmode
 }
 
 /**
- * @brief  Calculate length of bytecode string for char array. 
+ * @brief  Calculate length of bytecode string for char array.
  * @param [in] src Char array to calculate.
  * @param [in] srclen How many chars to calculate.
  * @return Length of bytecode-string including zero-byte.
@@ -165,7 +165,7 @@ int Text2BinTranslator::iIsBytecode(const char* src, int len)
 			break;
 		}
 	}
-	
+
 	// Return length by type
 	switch (src[1])
 	{
