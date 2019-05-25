@@ -1,21 +1,8 @@
 /*
 Frhed - Free hex editor
 Copyright (C) 2000 Raihan Kibria
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-Last change: 2017-06-18 by Jochen Neubeck
+SPDX-License-Identifier: GPL-3.0-or-later
+Last change: 2019-05-25 by Jochen Neubeck
 */
 /**
  * @file  heksedit.h
@@ -27,7 +14,7 @@ Last change: 2017-06-18 by Jochen Neubeck
 #define _HEKSEDIT_H_
 
 #ifndef HEKSEDIT_INTERFACE_VERSION
-#define HEKSEDIT_INTERFACE_VERSION 2
+#define HEKSEDIT_INTERFACE_VERSION 3
 #define const(x) x
 #endif
 
@@ -70,6 +57,25 @@ public:
 		int bAutoOffsetLen; /**< Determine offset length automatically. */
 		int bCenterCaret;
 		int iFontZoom;
+#if HEKSEDIT_INTERFACE_VERSION < 3
+	private:
+#endif
+		//General OLEDD options
+		int enable_drop;
+		int enable_drag;
+		int enable_scroll_delay_dd;
+		int enable_scroll_delay_sel;
+		int always_pick_move_copy;
+		//Input OLEDD options
+		int prefer_CF_HDROP;
+		int prefer_CF_BINARYDATA;
+		int prefer_CF_TEXT;
+		//Output OLEDD options
+		int output_CF_BINARYDATA;
+		int output_CF_TEXT;
+		int output_text_special;
+		int output_text_hexdump_display;
+		int output_CF_RTF;
 	};
 
 	struct Status

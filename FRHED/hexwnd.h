@@ -1,21 +1,8 @@
 /*
 Frhed - Free hex editor
 Copyright (C) 2000 Raihan Kibria
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-Last change: 2013-04-10 by Jochen Neubeck
+SPDX-License-Identifier: GPL-3.0-or-later
+Last change: 2019-05-25 by Jochen Neubeck
 */
 /**
  * @file  hexwnd.h
@@ -166,22 +153,6 @@ public:
 	void status_bar_click(bool left);
 	void CMD_adopt_colours();
 
-	//General OLEDD options
-	int enable_drop;
-	int enable_drag;
-	int enable_scroll_delay_dd;
-	int enable_scroll_delay_sel;
-	int always_pick_move_copy;
-	//Input OLEDD options
-	int prefer_CF_HDROP;
-	int prefer_CF_BINARYDATA;
-	int prefer_CF_TEXT;
-	//Output OLEDD options
-	int output_CF_BINARYDATA;
-	int output_CF_TEXT;
-	int output_text_special;
-	int output_text_hexdump_display;
-	int output_CF_RTF;
 	HGLOBAL RTF_hexdump(int start, int end, SIZE_T *plen = NULL);
 	int CMD_OLEDD_options();
 	CDropTarget* target;
