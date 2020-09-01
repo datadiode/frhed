@@ -187,7 +187,7 @@ public:
 	void CMD_remove_bkm();
 	void CMD_goto_bookmark(int i);
 	void make_bookmark_list(HMENU);
-	void CMD_add_bookmark ();
+	void CMD_add_bookmark();
 	void CMD_MRU_selected(int i);
 	void make_MRU_list(HMENU);
 	void update_MRU();

@@ -156,7 +156,7 @@ BOOL FastPasteDlg::Apply(HWindow *pDlg)
 			iCurByte = iGetStartOfSelection();
 			int iEndByte = iGetEndOfSelection();
 			olddata = UndoRecord::alloc(&m_dataArray[iCurByte], iEndByte - iCurByte + 1 + (iPasteTimes - 1) * iPasteSkip);
-			m_dataArray.RemoveAt(iCurByte, iEndByte - iCurByte + 1);//Remove extraneous data
+			m_dataArray.RemoveAt(iCurByte, iEndByte - iCurByte + 1); // Remove excess data
 			bSelected = false; // Deselect
 		}
 		else

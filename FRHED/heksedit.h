@@ -14,7 +14,7 @@ Last change: 2019-05-25 by Jochen Neubeck
 #define _HEKSEDIT_H_
 
 #ifndef HEKSEDIT_INTERFACE_VERSION
-#define HEKSEDIT_INTERFACE_VERSION 3
+#define HEKSEDIT_INTERFACE_VERSION 4
 #define const(x) x
 #endif
 
@@ -132,6 +132,14 @@ private:
 	virtual void STDMETHODCALLTYPE set_savepoint() = 0;
 	virtual void STDMETHODCALLTYPE clear_undorecords() = 0;
 	virtual SharedUndoRecords *STDMETHODCALLTYPE share_undorecords(SharedUndoRecords *) = 0;
+#if HEKSEDIT_INTERFACE_VERSION < 4
+private:
+#endif
+	virtual void STDMETHODCALLTYPE CMD_goto() = 0;
+	virtual void STDMETHODCALLTYPE CMD_goto_bookmark(int) = 0;
+	virtual void STDMETHODCALLTYPE CMD_add_bookmark() = 0;
+	virtual void STDMETHODCALLTYPE CMD_remove_bkm() = 0;
+	virtual void STDMETHODCALLTYPE CMD_clear_all_bmk() = 0;
 };
 
 #undef const

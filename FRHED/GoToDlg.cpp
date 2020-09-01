@@ -84,6 +84,11 @@ BOOL GoToDlg::Apply(HWindow *pDlg)
 	if (offset >= m_dataArray.size())
 		offset = m_dataArray.size() - 1;
 
+	if (bSelected)
+	{
+		bSelected = false;
+		repaint();
+	}
 	iCurByte = offset;
 	snap_caret();
 	return TRUE;

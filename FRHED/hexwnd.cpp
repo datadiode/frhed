@@ -948,10 +948,10 @@ void HexEditorWindow::character(char ch)
 		if (iCurByte > iEndByte)
 			swap(iCurByte, iEndByte);
 		olddata = UndoRecord::alloc(&m_dataArray[iCurByte], iEndByte - iCurByte + 1);
-		m_dataArray.RemoveAt(iCurByte + 1, iEndByte - iCurByte);//Remove extraneous data
-		m_dataArray[iCurByte] = 0;//Will overwrite below
+		m_dataArray.RemoveAt(iCurByte + 1, iEndByte - iCurByte); // Remove excess data
+		m_dataArray[iCurByte] = 0; // Will overwrite below
 		bSelected = false; // Deselect
-		resize_window();//Redraw stuff
+		resize_window(); // Redraw stuff
 	}
 	else if (bInsertMode && iCurNibble == 0 || iCurByte == m_dataArray.size())
 	{
@@ -1538,7 +1538,7 @@ void HexEditorWindow::command(int cmd)
 		break;
 
 	case IDM_FIND:
-		CMD_find ();
+		CMD_find();
 		break;
 
 	case IDM_GO_TO:
