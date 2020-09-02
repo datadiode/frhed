@@ -186,7 +186,7 @@ public:
 	void STDMETHODCALLTYPE CMD_clear_all_bmk();
 	void STDMETHODCALLTYPE CMD_remove_bkm();
 	void STDMETHODCALLTYPE CMD_goto_bookmark(int i);
-	void make_bookmark_list(HMENU);
+	void STDMETHODCALLTYPE make_bookmark_list(HMENU, int) const;
 	void STDMETHODCALLTYPE CMD_add_bookmark();
 	void CMD_MRU_selected(int i);
 	void make_MRU_list(HMENU);

@@ -1,21 +1,8 @@
 /*
 Frhed - Free hex editor
 Copyright (C) 2000 Raihan Kibria
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-Last change: 2013-04-10 by Jochen Neubeck
+SPDX-License-Identifier: GPL-3.0-or-later
+Last change: 2020-09-02 by Jochen Neubeck
 */
 /**
  * @file  hexwnd.cpp
@@ -1534,7 +1521,7 @@ void HexEditorWindow::command(int cmd)
 		break;
 
 	case IDM_ABOUT:
-		static_cast<dialog<AboutDlg>*>(this)->DoModal(pwnd);
+		dialog<AboutDlg>().DoModal(pwnd);
 		break;
 
 	case IDM_FIND:
@@ -2495,7 +2482,7 @@ int HexEditorWindow::initmenupopup(WPARAM w, LPARAM l)
 		break;
 	case Bookmarks:
 		// Create the bookmark list.
-		make_bookmark_list(h);
+		make_bookmark_list(h, IDM_BOOKMARK1);
 		break;
 	case Help:
 		break;
@@ -4217,7 +4204,7 @@ void HexEditorWindow::CMD_add_bookmark()
  * @brief Insert the bookmark list into the menu.
  * @param [in] menu Handle to the menu.
  */
-void HexEditorWindow::make_bookmark_list(HMENU menu)
+void HexEditorWindow::make_bookmark_list(HMENU menu, int idm_bookmark1) const
 {
 	do
 		;
@@ -4234,7 +4221,7 @@ void HexEditorWindow::make_bookmark_list(HMENU menu)
 			else
 				_stprintf(buf, _T("&%d 0x%x"), i + 1, pbmkList[i].offset);
 			AppendMenu(menu, pbmkList[i].offset <= m_dataArray.size() ?
-				MF_ENABLED : MF_GRAYED, IDM_BOOKMARK1 + i, buf);
+				MF_ENABLED : MF_GRAYED, idm_bookmark1 + i, buf);
 		}
 	}
 }
@@ -4247,8 +4234,8 @@ void HexEditorWindow::CMD_goto_bookmark(int i)
 		iCurByte = pbmkList[i].offset;
 		iCurNibble = 0;
 		bSelected = false;
+		snap_caret();
 		resize_window();
-		adjust_vscrollbar();
 	}
 	else
 	{

@@ -140,6 +140,7 @@ private:
 	virtual void STDMETHODCALLTYPE CMD_add_bookmark() = 0;
 	virtual void STDMETHODCALLTYPE CMD_remove_bkm() = 0;
 	virtual void STDMETHODCALLTYPE CMD_clear_all_bmk() = 0;
+	virtual void STDMETHODCALLTYPE make_bookmark_list(HMENU, int) const = 0;
 };
 
 #undef const

@@ -30,6 +30,65 @@ Last change: 2013-02-24 by Jochen Neubeck
 #include "hexwdlg.h"
 #include "StringTable.h"
 
+struct DrawItemStruct_WebLinkButton : DRAWITEMSTRUCT
+{
+	void DrawItem() const
+	{
+		TCHAR cText[2048];
+		int cchText = ::GetWindowText(hwndItem, cText, _countof(cText));
+		COLORREF clrText = ::GetSysColor(COLOR_HOTLIGHT);
+		if (::GetWindowLong(hwndItem, GWL_STYLE) & BS_LEFTTEXT)
+		{
+			clrText = ::GetSysColor(COLOR_GRAYTEXT);
+			if (GetRValue(clrText) == GetGValue(clrText) && GetRValue(clrText) == GetBValue(clrText))
+				clrText &= RGB(255,0,255);
+		}
+		RECT rcText = rcItem;
+		::DrawText(hDC, cText, cchText, &rcText, DT_LEFT | DT_CALCRECT);
+		::SetWindowPos(hwndItem, NULL, 0, 0, rcText.right, rcItem.bottom,
+			SWP_NOMOVE | SWP_NOZORDER | SWP_NOREDRAW);
+		switch (itemAction)
+		{
+		case ODA_DRAWENTIRE:
+			::ExtTextOut(hDC, 0, 0, ETO_OPAQUE, &rcItem, 0, 0, 0);
+			::SetBkMode(hDC, TRANSPARENT);
+			::SetTextColor(hDC, clrText);
+			::DrawText(hDC, cText, cchText, &rcText, DT_LEFT);
+			rcText.top = rcText.bottom - 1;
+			::SetBkColor(hDC, clrText);
+			::ExtTextOut(hDC, 0, 0, ETO_OPAQUE, &rcText, 0, 0, 0);
+			if (itemState & ODS_FOCUS)
+			{
+			case ODA_FOCUS:
+				if (!(itemState & ODS_NOFOCUSRECT))
+				{
+					::SetTextColor(hDC, RGB(0,0,0));
+					::SetBkColor(hDC, RGB(255,255,255));
+					::SetBkMode(hDC, OPAQUE);
+					rcText.top = rcText.bottom - 1;
+					++rcText.bottom;
+					::DrawFocusRect(hDC, &rcText);
+				}
+			}
+			break;
+		}
+	}
+};
+
+AboutDlg::AboutDlg()
+{
+	TCHAR path[MAX_PATH];
+	GetModuleFileName(hMainInstance, path, _countof(path));
+	PathRemoveFileSpec(path);
+	PathAppend(path, _T("Frhed.exe"));
+	m_hIcon = ExtractIcon(NULL, path, 0);
+}
+
+AboutDlg::~AboutDlg()
+{
+	DestroyIcon(m_hIcon);
+}
+
 /**
  * @brief Initialize the dialog.
  * @param [in] hDlg Handle to the dialog.
@@ -45,9 +104,7 @@ BOOL AboutDlg::OnInitDialog(HWindow *pDlg)
 	// Set the homepage URL.
 	pDlg->SetDlgItemText(IDC_ABOUT_URL, FrhedHomepageURL);
 	// Set the icon.
-	if (HWindow *pwndParent = pDlg->GetParent())
-		if (DWORD_PTR dwIcon = pwndParent->GetClassLongPtr(GCLP_HICON))
-			pDlg->SendDlgItemMessage(IDC_APPICON, STM_SETICON, dwIcon, 0);
+	pDlg->SendDlgItemMessage(IDC_APPICON, STM_SETICON, reinterpret_cast<WPARAM>(m_hIcon));
 	return TRUE;
 }
 
@@ -67,11 +124,11 @@ BOOL AboutDlg::OnCommand(HWindow *pDlg, WPARAM wParam, LPARAM lParam)
 		pDlg->EndDialog(wParam);
 		return TRUE;
 
-	case IDC_ABOUT_OPENURL:
+	case IDC_ABOUT_URL:
 		{
 			HINSTANCE hi = ShellExecute(pDlg->m_hWnd,
 				_T("open"), FrhedHomepageURL, 0, NULL, SW_SHOWNORMAL);
-			if ((UINT)hi <= HINSTANCE_ERROR)
+			if (reinterpret_cast<UINT>(hi) <= HINSTANCE_ERROR)
 			{
 				MessageBox(pDlg, GetLangString(IDS_ABOUT_BROWSER_ERR), MB_ICONERROR);
 			}
@@ -81,7 +138,7 @@ BOOL AboutDlg::OnCommand(HWindow *pDlg, WPARAM wParam, LPARAM lParam)
 	case IDC_ABOUTCONTRIBS:
 		{
 			TCHAR contrList[MAX_PATH];
-			GetModuleFileName(NULL, contrList, MAX_PATH);
+			GetModuleFileName(hMainInstance, contrList, MAX_PATH);
 			PathRemoveFileSpec(contrList);
 			PathAppend(contrList, ContributorsList);
 			if (PathFileExists(contrList))
@@ -118,9 +175,33 @@ INT_PTR AboutDlg::DlgProc(HWindow *pDlg, UINT uMsg, WPARAM wParam, LPARAM lParam
 	case WM_COMMAND:
 		return OnCommand(pDlg, wParam, lParam);
 
+	case WM_DRAWITEM:
+		switch (wParam)
+		{
+		case IDC_ABOUT_URL:
+			reinterpret_cast<DrawItemStruct_WebLinkButton *>(lParam)->DrawItem();
+			return TRUE;
+		}
+		break;
+
+	case WM_SETCURSOR:
+		switch (reinterpret_cast<HWindow *>(wParam)->GetDlgCtrlID())
+		{
+		case IDC_ABOUT_URL:
+			::SetCursor(::LoadCursor(NULL, MAKEINTRESOURCE(IDC_HAND)));
+			pDlg->SetWindowLongPtr(DWLP_MSGRESULT, TRUE);
+			return TRUE;
+		}
+		break;
+
 	case WM_HELP:
-		OnHelp(pDlg);
+		HexEditorWindow::OnHelp(pDlg);
 		break;
 	}
 	return FALSE;
+}
+
+int CALLBACK About(HWND hWnd)
+{
+	return dialog<AboutDlg>().DoModal(reinterpret_cast<HWindow *>(hWnd));
 }
