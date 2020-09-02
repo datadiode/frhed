@@ -2,7 +2,7 @@
 Frhed - Free hex editor
 Copyright (C) 2000 Raihan Kibria
 SPDX-License-Identifier: GPL-3.0-or-later
-Last change: 2019-05-25 by Jochen Neubeck
+Last change: 2020-09-02 by Jochen Neubeck
 */
 /**
  * @file  heksedit.h

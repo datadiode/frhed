@@ -2,7 +2,7 @@
 Frhed - Free hex editor
 Copyright (C) 2000 Raihan Kibria
 SPDX-License-Identifier: GPL-3.0-or-later
-Last change: 2019-05-25 by Jochen Neubeck
+Last change: 2020-09-02 by Jochen Neubeck
 */
 /**
  * @file  hexwnd.h
@@ -178,16 +178,16 @@ public:
 	BOOL STDMETHODCALLTYPE select_next_diff(BOOL bFromStart);
 	BOOL STDMETHODCALLTYPE select_prev_diff(BOOL bFromEnd);
 	void CMD_colors_to_default();
-	void CMD_goto();
+	void STDMETHODCALLTYPE CMD_goto();
 	void apply_template(TCHAR *pcTemplate);
 	void CMD_apply_template();
 	void dropfiles(HDROP);
 	void CMD_open_partially();
-	void CMD_clear_all_bmk();
-	void CMD_remove_bkm();
-	void CMD_goto_bookmark(int i);
+	void STDMETHODCALLTYPE CMD_clear_all_bmk();
+	void STDMETHODCALLTYPE CMD_remove_bkm();
+	void STDMETHODCALLTYPE CMD_goto_bookmark(int i);
 	void make_bookmark_list(HMENU);
-	void CMD_add_bookmark();
+	void STDMETHODCALLTYPE CMD_add_bookmark();
 	void CMD_MRU_selected(int i);
 	void make_MRU_list(HMENU);
 	void update_MRU();
