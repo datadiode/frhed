@@ -42,7 +42,7 @@ Last change: 2013-02-24 by Jochen Neubeck
 void ShowHtmlHelp(UINT uCommand, LPCTSTR path, HWindow *pParentWindow)
 {
 	TCHAR fullHelpPath[MAX_PATH];
-	GetModuleFileName(NULL, fullHelpPath, MAX_PATH);
+	GetModuleFileName(hMainInstance, fullHelpPath, MAX_PATH);
 	PathRemoveFileSpec(fullHelpPath);
 	PathAppend(fullHelpPath, HtmlHelpFile);
 	if (!PathFileExists(fullHelpPath))

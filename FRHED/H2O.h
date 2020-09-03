@@ -369,6 +369,11 @@ namespace H2O
 			assert(::IsWindow(m_hWnd));
 			return reinterpret_cast<HWindow *>(::GetParent(m_hWnd));
 		}
+		HWindow *GetAncestor(UINT gaFlags)
+		{
+			assert(::IsWindow(m_hWnd));
+			return reinterpret_cast<HWindow *>(::GetAncestor(m_hWnd, gaFlags));
+		}
 		HWindow *SetParent(HWindow *pWndNewParent)
 		{
 			assert(::IsWindow(m_hWnd));

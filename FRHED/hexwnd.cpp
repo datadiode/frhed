@@ -4947,7 +4947,7 @@ LRESULT HexEditorWindow::OnWndMsg(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lP
 
 	case WM_HELP:
 		OnHelp(reinterpret_cast<HWindow *>(hwnd));
-		break;
+		return TRUE;
 	}
 	return DefWindowProc(hwnd, iMsg, wParam, lParam);
 }

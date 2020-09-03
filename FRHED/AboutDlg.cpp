@@ -196,7 +196,7 @@ INT_PTR AboutDlg::DlgProc(HWindow *pDlg, UINT uMsg, WPARAM wParam, LPARAM lParam
 
 	case WM_HELP:
 		HexEditorWindow::OnHelp(pDlg);
-		break;
+		return TRUE;
 	}
 	return FALSE;
 }
