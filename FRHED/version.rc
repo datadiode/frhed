@@ -1,8 +1,8 @@
 #include "version.h"
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION FRHED_MAJOR_VERSION,FRHED_MINOR_VERSION,FRHED_SUB_RELEASE_NO,FRHED_BUILD_NO
- PRODUCTVERSION FRHED_MAJOR_VERSION,FRHED_MINOR_VERSION,FRHED_SUB_RELEASE_NO,FRHED_BUILD_NO
+ FILEVERSION GEN_VER_DIGITAL_VERSION
+ PRODUCTVERSION GEN_VER_DIGITAL_VERSION
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x21L
@@ -19,15 +19,15 @@ BEGIN
         BEGIN
             VALUE "Comments", "Homepage: http://frhed.sourceforge.net\0"
             VALUE "CompanyName", "(c) Raihan Kibria 2000"
-            VALUE "FileDescription", "Frhed - Free hex editor " SHARPEN(FRHED_VERSION_4)
-            VALUE "FileVersion", SHARPEN(FRHED_VERSION_4)
+            VALUE "FileDescription", "Frhed - Free hex editor " GEN_VER_VERSION_STRING
+            VALUE "FileVersion", GEN_VER_VERSION_STRING
             VALUE "InternalName", "frhed\0"
-            VALUE "LegalCopyright", "GNU General Public License v2.0"
+            VALUE "LegalCopyright", "GNU General Public License v3.0"
             VALUE "LegalTrademarks", ""
             VALUE "OriginalFilename", "Frhed.exe"
             VALUE "PrivateBuild", ""
             VALUE "ProductName", "Frhed"
-            VALUE "ProductVersion", SHARPEN(FRHED_VERSION_4)
+            VALUE "ProductVersion", GEN_VER_VERSION_STRING
             VALUE "SpecialBuild", ""
         END
     END

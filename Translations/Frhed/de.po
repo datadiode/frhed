@@ -1757,7 +1757,7 @@ msgstr ""
 
 #: heksedit.rc:1013
 #, c-format
-msgid "Version %u.%u.%u"
+msgid "Version %s"
 msgstr ""
 
 #: heksedit.rc:1014

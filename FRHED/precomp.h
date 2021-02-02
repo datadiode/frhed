@@ -50,6 +50,16 @@ using H2O::HMenu;
 using MAUtil::Vector;
 using MAUtil::String;
 
+// Token pasting macros taken from
+// https://github.com/alexforencich/templates/blob/master/xmega.cpp/usart.h
+// Copyright (c) 2011 Alex Forencich
+// SPDX-License-Identifier: MIT
+
+#define TOKEN_PASTE2_INT(x, y) x ## y
+#define TOKEN_PASTE2(x, y) TOKEN_PASTE2_INT(x, y)
+#define TOKEN_PASTE3_INT(x, y, z) x ## y ## z
+#define TOKEN_PASTE3(x, y, z) TOKEN_PASTE3_INT(x, y, z)
+
 namespace NT4
 {
 	struct OPENFILENAME : public OPENFILENAME_NT4

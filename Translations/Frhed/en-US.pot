@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Frhed\n"
 "Report-Msgid-Bugs-To: http://sourceforge.net/tracker/?group_id=13216&atid=113216\n"
-"POT-Creation-Date: 2020-09-03 07:06+0000\n"
+"POT-Creation-Date: 2021-02-02 18:39+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: English <frhed-devel@lists.sourceforge.net>\n"
@@ -1754,7 +1754,7 @@ msgstr ""
 
 #: heksedit.rc:1013
 #, c-format
-msgid "Version %u.%u.%u"
+msgid "Version %s"
 msgstr ""
 
 #: heksedit.rc:1014

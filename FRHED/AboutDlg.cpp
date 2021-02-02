@@ -99,7 +99,7 @@ BOOL AboutDlg::OnInitDialog(HWindow *pDlg)
 	TCHAR buf[4096];
 	buf[RTL_NUMBER_OF(buf) - 1] = _T('\0');
 	_sntprintf(buf, RTL_NUMBER_OF(buf) - 1, GetLangString(IDS_ABOUTFRHEDVER),
-		FRHED_MAJOR_VERSION, FRHED_MINOR_VERSION, FRHED_SUB_RELEASE_NO);
+		TOKEN_PASTE2(TEXT, (GEN_VER_VERSION_STRING)));
 	pDlg->SetDlgItemText(IDC_ABOUT_VER, buf);
 	// Set the homepage URL.
 	pDlg->SetDlgItemText(IDC_ABOUT_URL, FrhedHomepageURL);

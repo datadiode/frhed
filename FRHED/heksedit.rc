@@ -1010,7 +1010,7 @@ END
 STRINGTABLE 
 BEGIN
     IDS_APPNAME             "Frhed"
-    IDS_ABOUTFRHEDVER       "Version %u.%u.%u"
+    IDS_ABOUTFRHEDVER       "Version %s"
     IDS_DIFFLISTITEMFORMAT  "%d) 0x%x=%u to 0x%x=%u (%d bytes)"
     IDS_OPEN_ALL_FILES      "All Files (*.*)|*.*|"
     IDS_UNTITLED            "Untitled"

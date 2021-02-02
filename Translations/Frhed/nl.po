@@ -1766,8 +1766,8 @@ msgstr "Frhed"
 
 #: heksedit.rc:1013
 #, c-format
-msgid "Version %u.%u.%u"
-msgstr "Versie %u.%u.%u"
+msgid "Version %s"
+msgstr "Versie %s"
 
 #: heksedit.rc:1014
 #, c-format

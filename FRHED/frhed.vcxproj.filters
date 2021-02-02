@@ -86,7 +86,7 @@
     <docs Include="..\Docs\Users\History.txt">
       <Filter>Setup Files</Filter>
     </docs>
-    <docs Include="..\Docs\Users\Links.txt">
+    <docs Include="..\Docs\Users\Frhed.chm">
       <Filter>Setup Files</Filter>
     </docs>
     <docs Include="..\Docs\Users\Sample.tpl">

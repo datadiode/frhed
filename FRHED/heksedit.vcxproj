@@ -513,6 +513,10 @@
     <None Include="..\Docs\Users\History.txt" />
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="..\.git\FETCH_HEAD">
+      <Command>"$(ProjectDir)..\GIT-VS-VERSION-GEN.bat" --force "$(IntDir)\" "$(ProjectDir)..\gen-versioninfo.h"</Command>
+      <Outputs>$(ProjectDir)..\gen-versioninfo.h</Outputs>
+    </CustomBuild>
     <ResourceCompile Include="heksedit.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
