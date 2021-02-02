@@ -93,4 +93,7 @@
       <Filter>Setup Files</Filter>
     </docs>
   </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\.git\FETCH_HEAD" />
+  </ItemGroup>
 </Project>
