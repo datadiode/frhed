@@ -1,0 +1,23 @@
+version: 1.0.{build}
+image: Visual Studio 2015
+
+configuration:
+- Debug
+- Release
+- UnicodeDebug
+- UnicodeRelease
+
+platform:
+- Win32
+- x64
+
+build:
+  verbosity: normal
+  project: FRHED.sln
+
+after_build:
+- ps: $env:PRODUCT_VERSION=(Get-Command "$env:APPVEYOR_BUILD_FOLDER\Build\FRHED\$env:PLATFORM\$env:CONFIGURATION\Frhed.exe").FileVersionInfo.ProductVersion
+
+artifacts:
+- path: Build\FRHED\$(platform)\$(configuration)
+  name: Frhed_$(PRODUCT_VERSION)-$(platform)-$(configuration)
