@@ -16,7 +16,7 @@ build:
   project: FRHED.sln
 
 before_build:
-- cmd: GIT-VS-VERSION-GEN.bat
+- cmd: attrib -a FRHED\heksedit.rc
 
 after_build:
 - cmd: GIT-VS-VERSION-GEN.bat
