@@ -1,4 +1,4 @@
-@ECHO OFF
+@ECHO ON
 SETLOCAL
 
 REM  Script for generation of rc VERSIONINFO & StringFileInfo
@@ -282,8 +282,10 @@ SET git_cmd=
 FOR /F %%A IN ('"git describe --match %tmp%"') DO SET desc=%%A
 SET tokens=-1
 FOR %%A IN (%desc:-= %) DO SET /A tokens=tokens+1
-FOR /F "tokens=%tokens% delims=-" %%A IN ('"git describe --match %tmp%"') DO (
-  SET nbPATCHES_PART=%%A
+IF NOT "%tokens%"=="0" (
+  FOR /F "tokens=%tokens% delims=-" %%A IN ('"git describe --match %tmp%"') DO (
+      SET nbPATCHES_PART=%%A
+  )
 )
 IF NOT DEFINED nbPATCHES_PART SET nbPATCHES_PART=0
 SET tmp=
