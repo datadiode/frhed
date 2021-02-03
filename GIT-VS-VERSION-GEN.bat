@@ -26,6 +26,7 @@ SET COUNT_PATCHES_FROM=fix
 :: --------------------
 :CHECK_ARGS
 :: --------------------
+IF "%~1" == "--debug" ECHO ON& SHIFT
 
 :: Console output only.
 IF [%1] == [] GOTO START
@@ -33,7 +34,6 @@ IF [%1] == [] GOTO START
 IF "%~1" == "--help" GOTO USAGE
 IF "%~1" == "--quiet" SET fQUIET=1& SHIFT
 IF "%~1" == "--force" SET fFORCE=1& SHIFT
-IF "%~1" == "--debug" ECHO ON& SHIFT
 
 :: Un-documented switch
 IF "%~1" == "--test" GOTO TEST
