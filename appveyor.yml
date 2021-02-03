@@ -15,7 +15,11 @@ build:
   verbosity: normal
   project: FRHED.sln
 
+before_build:
+- cmd: GIT-VS-VERSION-GEN.bat --debug
+
 after_build:
+- cmd: GIT-VS-VERSION-GEN.bat --debug
 - ps: $env:PRODUCT_VERSION=(Get-Command "$env:APPVEYOR_BUILD_FOLDER\Build\FRHED\$env:PLATFORM\$env:CONFIGURATION\Frhed.exe").FileVersionInfo.ProductVersion
 
 artifacts:
