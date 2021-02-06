@@ -1916,7 +1916,7 @@ msgstr ""
 
 #: heksedit.rc:1051
 #, c-format
-msgid "Error code 0x%x occured while opening file %s."
+msgid "Error code 0x%x occurred while opening file %s."
 msgstr "Foutcode 0x%x deed zich voor tijdens het openen van bestand %s."
 
 #: heksedit.rc:1052
@@ -1931,7 +1931,7 @@ msgstr "Bestand is leeg."
 
 #: heksedit.rc:1054
 #, c-format
-msgid "An error occured when calling the text editor."
+msgid "An error occurred when calling the text editor."
 msgstr "Er deed zich een fout voor bij het oproepen van de teksteditor."
 
 #: heksedit.rc:1055
@@ -2370,7 +2370,7 @@ msgstr "Zoekstrink is nul bytes groot."
 
 #: heksedit.rc:1227
 #, c-format
-msgid "Could not find any more occurances."
+msgid "Could not find any more occurrences."
 msgstr "Kon geen gevallen meer vinden."
 
 #: heksedit.rc:1228
@@ -2541,7 +2541,7 @@ msgstr "Te vervangen en vervangen-door data zijn hetzelfde."
 
 #: heksedit.rc:1269
 #, c-format
-msgid "%d occurences replaced."
+msgid "%d occurrences replaced."
 msgstr "%d gevallen vervangen."
 
 #: heksedit.rc:1270

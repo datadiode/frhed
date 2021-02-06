@@ -1940,7 +1940,7 @@ msgstr ""
 
 #: heksedit.rc:1051
 #, c-format
-msgid "Error code 0x%x occured while opening file %s."
+msgid "Error code 0x%x occurred while opening file %s."
 msgstr "エラーコード 0x%x が発生しました。(ファイル %s)"
 
 #: heksedit.rc:1052
@@ -1955,7 +1955,7 @@ msgstr "ファイルは空です。"
 
 #: heksedit.rc:1054
 #, c-format
-msgid "An error occured when calling the text editor."
+msgid "An error occurred when calling the text editor."
 msgstr "テキストエディタ起動時にエラーが発生しました。"
 
 #: heksedit.rc:1055
@@ -2398,7 +2398,7 @@ msgstr "検索文字列が0バイト長です。"
 
 #: heksedit.rc:1227
 #, c-format
-msgid "Could not find any more occurances."
+msgid "Could not find any more occurrences."
 msgstr "これ以上の出現箇所を見つけることはできませんでした。"
 
 #: heksedit.rc:1228
@@ -2569,7 +2569,7 @@ msgstr "置換対象データと置換後のデータが一致しています。"
 
 #: heksedit.rc:1269
 #, c-format
-msgid "%d occurences replaced."
+msgid "%d occurrences replaced."
 msgstr "%d 個の出現箇所を置換しました。"
 
 #: heksedit.rc:1270

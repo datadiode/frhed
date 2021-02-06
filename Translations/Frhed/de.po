@@ -1889,7 +1889,7 @@ msgstr ""
 
 #: heksedit.rc:1051
 #, c-format
-msgid "Error code 0x%x occured while opening file %s."
+msgid "Error code 0x%x occurred while opening file %s."
 msgstr ""
 
 #: heksedit.rc:1052
@@ -1904,7 +1904,7 @@ msgstr ""
 
 #: heksedit.rc:1054
 #, c-format
-msgid "An error occured when calling the text editor."
+msgid "An error occurred when calling the text editor."
 msgstr ""
 
 #: heksedit.rc:1055
@@ -2315,7 +2315,7 @@ msgstr ""
 
 #: heksedit.rc:1227
 #, c-format
-msgid "Could not find any more occurances."
+msgid "Could not find any more occurrences."
 msgstr ""
 
 #: heksedit.rc:1228
@@ -2450,7 +2450,7 @@ msgstr ""
 
 #: heksedit.rc:1269
 #, c-format
-msgid "%d occurences replaced."
+msgid "%d occurrences replaced."
 msgstr ""
 
 #: heksedit.rc:1270
